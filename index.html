@@ -37,26 +37,31 @@
 	}
 	.badges {
 		display: flex;
-    	flex-wrap: wrap;
-    	align-items: flex-start;
-    	gap: 8px;
-    	margin-top: 16px;
-    	max-width: 1200px;
-    }
-    .badges img {
-    	height: 31px;
-    	width: auto;
-    }
-    a {
-    	text-decoration: none;
-    	color: #1E90FF;
-    }
-    a:hover {
-    	text-decoration: underline;
-    }
-    footer p {
-    	font-size: 12px;
-    }
+		flex-wrap: wrap;
+		align-items: flex-start;
+		gap: 8px;
+		margin-top: 16px;
+		max-width: 1200px;
+	}
+	.badges img {
+		height: 31px;
+		width: auto;
+	}
+	a {
+		text-decoration: none;
+		color: #1E90FF;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+	footer p {
+		font-size: 12px;
+	}
+	#server-stats {
+		font-size: 12px;
+		margin-top: 8px;
+		color: #888;
+	}
 </style>
 </head>
 <body>
@@ -64,7 +69,7 @@
 <img class="main" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/IBM_PC-5150.JPG/500px-IBM_PC-5150.JPG" width="480" height="360" alt="An image of an IBM 5150 PC.">
 <h2>Introduction</h2>
 <p>Hey, I'm Brandon (btea), a teenager who's been around computers my whole life. I'm into Linux, networking, and malware analysis. I've been running a homelab for a while now, basically playing sysadmin — and I've been focused on leveling up my C++ and frontend skills after spending most of my time in Python.</p>
-<h2>My hardware</h2>
+<h2>My hardware</h2>https://github.com/itsbt125/btea.dev/new/main
 <p>I'll admit I've never really owned truly old hardware. My desktop rocks a 9800X3D and 9070 XT, which is already overkill for what I do — and somehow I got my CPU with 64GB of RAM in a Microcenter bundle. I've grown to like the laptop life again lately, so I run an HP gaming laptop with the NVIDIA dGPU disabled for Linux, though I did have to swap out the Realtek 8852CE WiFi card due to stability issues. On the server side, I put an NVMe hat on my Raspberry Pi 5 a while back, which serves this site!</p>
 <h2>What I'm doing right now</h2>
 <p>Over the past few months I've fallen deep into the cybersecurity rabbit hole. I recently built a project that enriches fail2ban logs with ranked geolocation and ISP data. I'm also approaching my 4-month anniversary of fully switching to Linux on all my machines. Teaching myself C++ has been slow but steady, and this site marks my first HTML written outside of school — put together after about an hour of reading up on it.</p>
@@ -87,6 +92,30 @@
     <img src="data:image/gif;base64,R0lGODlhUAAPAOYAAAwHBauuplmF10xppfz89WZmZnJydTJMd19+w9je1jJHbCs+ZVJ1vZ2hnczMzCU8YUpSW2iN2+rt5z5YhXSIs01wtmKK1ru7u094yFBnmjhXliYnJ46OjV1ofDhNdX+AemiL1oaHlOLj312Axu/17kZkmNbW1kNYjSxCbXGZ7BYYGGGEz6eop1V5v1h1rlBWZTA9VmOG00ROZDxSe4mMhtve11t9xExrrTJKcmOMzlhRUEpajMXFxTBCaVuDz1Bvq/T18EhmomxgWWuR42yR2D5Vhe7w5T9ZkXx7fFt8t+Pk4BQRCTNBXaGgnkxaeP///8vQ1W6U3aysrFl6vFl/yqerp+3u60Vjl97d3mGDx9be3oGCfDdNeSk8YFJztVF9zk9ro0Zimld1tWuMzklhj/f39+fn5gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAQUAP8ALAAAAABQAA8AAAf/gAWCg4SFhoeIiYqLjINPj5CRkpOUlZaXmJmCTyxIVRJQYlFEREkzU6QrA046QiEZABtPFrS1tre4ubq7uU+bUk0iZQkuUVFZChNEIMwIQWBjYykwS7O819jZt74FTxwXJBIkFCMgUydTWczMPydiERFZKtba9fbbmywsDkBGHTgzyJCZ4eHECmYjSvywsGIIGXq7IPWqBfERRVoQdXF74gALDwIBIPTwgKOkgiIrUsYYEGZEjBg2Mk7UOMsixpsWrMnEtdGBGQJKOBRYwKVoySkMV1gYcKTFyxY7t9mUmLMqvUg4o9rq6aBGDRoGuhQ1aiPp0qZPtV7UuLaqW53YgzaawCLFAY0PTA7oPdBjgAUfPlY2FSCAgVqMNre1hfs2ca9NJp6YsNJgiwwUXEqWvCEAcJArVKisqHD4nmmemy7UkPCEx5YXKA5o7sG58JEBKVfcKH26d85fPHg4IMECwgMFyHsc6ewjyBEGAr5g0MDbt+mNmbJr386dUqPv4MOLNxQIADs=" alt="email badge">
     <img src="https://capstasher.neocities.org/88x31Buttons/internetarchive.gif" alt="internet archive badge">
 </div>
-<footer><p>© 2026 btea.dev · Last updated March 29, 2026 · <a href="https://github.com/itsbt125/btea.dev" target="_blank" rel="noopener noreferrer"> Source Code</a></p></footer>
+<div id="server-stats"></div>
+<script>
+  function formatUptime(seconds) {
+    const d = Math.floor(seconds / 86400);
+    const h = Math.floor((seconds % 86400) / 3600);
+    const m = Math.floor((seconds % 3600) / 60);
+    if (d > 0) return `${d}d ${h}h ${m}m`;
+    if (h > 0) return `${h}h ${m}m`;
+    return `${m}m`;
+  }
+
+  function updateStats() {
+    fetch('/stats')
+      .then(r => r.json())
+      .then(d => {
+        document.getElementById('server-stats').innerHTML =
+          `cpu: ${d.cpu}% utilized · memory: ${d.mem_used}gb / 7.87gb · uptime: ${formatUptime(d.uptime)} · unique visitors (24h): ${d.unique_visitors_by_ip}`;
+      })
+      .catch(() => {});
+  }
+
+  updateStats();
+  setInterval(updateStats, 60000);
+</script>
+<footer><p>© 2026 btea.dev · Last updated March 29, 2026 · <a href="https://github.com/itsbt125/btea.dev" target="_blank" rel="noopener noreferrer">Source Code</a></p></footer>
 </body>
 </html>
