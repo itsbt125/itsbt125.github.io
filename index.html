@@ -4,94 +4,54 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="brandon's personal site. linux, networking, cybersecurity.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self';">
+<meta property="og:title" content="btea.dev">
+<meta property="og:description" content="brandon's personal site. linux, networking, cybersecurity.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://btea.dev/">
+<meta property="og:image" content="https://btea.dev/images/ibm-pc-5150.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="style.css">
 <title>btea.dev</title>
-<style>
-	html {
-		font-family: sans-serif;
-		margin: 0;
-		padding: 0 24px;
-		scrollbar-width: none;
-		-ms-overflow-style: none;
-		overflow: auto;
-	}
-	html::-webkit-scrollbar {
-		display: none;
-	}
-	body {
-		background-color: #FFFDF7;
-		margin: 0;
-		padding: 0 24px;
-		overflow: auto;
-	}
-	h1 {
-		text-align: left;
-	}
-	img.main {
-		display: block;
-		margin: 0;
-		border-radius: 30px;
-	}
-	p {
-		max-width: 1200px;
-		line-height: 1.6;
-	}
-	.badges {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: flex-start;
-		gap: 8px;
-		margin-top: 16px;
-		max-width: 1200px;
-	}
-	.badges img {
-		height: 31px;
-		width: auto;
-	}
-	a {
-		text-decoration: none;
-		color: #1E90FF;
-	}
-	a:hover {
-		text-decoration: underline;
-	}
-	footer p {
-		font-size: 12px;
-	}
-	#server-stats {
-		font-size: 12px;
-		margin-top: 8px;
-		color: #888;
-	}
-</style>
 </head>
 <body>
+<header>
 <h1>brandon's page</h1>
-<img class="main" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/IBM_PC-5150.JPG/500px-IBM_PC-5150.JPG" width="480" height="360" alt="An image of an IBM 5150 PC.">
+</header>
+<main>
+<a href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/IBM_PC-5150.JPG/500px-IBM_PC-5150.JPG" target="_blank" rel="noopener noreferrer"><img class="main" src="images/ibm-pc-5150.jpg" width="480" height="360" alt="IBM 5150 PC"></a>
 <h2>Introduction</h2>
 <p>Hey, I'm Brandon (btea), a teenager who's been around computers my whole life. I'm into Linux, networking, and malware analysis. I've been running a homelab for a while now, basically playing sysadmin — and I've been focused on leveling up my C++ and frontend skills after spending most of my time in Python.</p>
-<h2>My hardware</h2>https://github.com/itsbt125/btea.dev/new/main
-<p>I'll admit I've never really owned truly old hardware. My desktop rocks a 9800X3D and 9070 XT, which is already overkill for what I do — and somehow I got my CPU with 64GB of RAM in a Microcenter bundle. I've grown to like the laptop life again lately, so I run an HP gaming laptop with the NVIDIA dGPU disabled for Linux, though I did have to swap out the Realtek 8852CE WiFi card due to stability issues. On the server side, I put an NVMe hat on my Raspberry Pi 5 a while back, which serves this site!</p>
+<h2>My hardware</h2>
+<ul>
+<li><strong>Desktop:</strong> 9800X3D + 9070 XT, 64GB RAM. Dual-booting Arch and Windows, mostly Arch.</li>
+<li><strong>Laptop:</strong> HP Omen with a Ryzen 7 7840HS and RTX 4070. The NVIDIA dGPU is disabled in BIOS for Linux. Swapped the Realtek 8852CE WiFi card for an Intel AX210 due to stability issues. I used AI to reverse engineer the WMI fan protocol for this board and built a kernel module for fan control.</li>
+<li><strong>Server:</strong> Raspberry Pi 5 with a Waveshare NVMe hat running Debian. Static IP on the LAN, nginx serving this site.</li>
+</ul>
 <h2>What I'm doing right now</h2>
-<p>Over the past few months I've fallen deep into the cybersecurity rabbit hole. I recently built a project that enriches fail2ban logs with ranked geolocation and ISP data. I'm also approaching my 4-month anniversary of fully switching to Linux on all my machines. Teaching myself C++ has been slow but steady, and this site marks my first HTML written outside of school — put together after about an hour of reading up on it.</p>
+<p>Recently built a bash security auditor for Linux server hardening (server-audit), and the fail2ban log enrichment tool. Still teaching myself C++ and tweaking this site.</p>
 <h2>Contacts and socials</h2>
-<p>You can email me at <a href="mailto:brandon@btea.dev">brandon@btea.dev</a>. If you'd like to talk more casually feel free to add my <a href="https://discord.com/users/955163358309523500" target="_blank" rel="noopener noreferrer">Discord</a>. You can find me on GitHub <a href="https://github.com/itsbt125" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<p>You can email me at <a href="mailto:brandon@btea.dev">brandon@btea.dev</a>. If you'd like to talk more casually feel free to add my <a href="https://discord.com/users/955163358309523500" target="_blank" rel="me noopener noreferrer">Discord</a>. You can find me on GitHub <a href="https://github.com/itsbt125" target="_blank" rel="me noopener noreferrer">here</a>.</p>
 <div class="badges">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAIAAAD8q9/YAAAABGdBTUEAANbY1E9YMgAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAMfSURBVHjaYkxLS2MYSQAggBiAHv6PF2zYsEFAQACoVFNTE8j+P5QB0LMAAcRCMEQmTJjw4cMHZmZmHh6eoqIif39/fKrPMjL8Y2D4zwAi/yIx/iIx0NAfGInGgLORpdBIZMZfDIsgLoEwgOg0kMMAEEBMBD0sKSlZWVmpqKjo5eV17949wmmGEZX7H5sgXOo/khpkBrIsLoDVZEZUBoYJAAFEOIbZGD5YCK63y/vznvUGUZkEzaEwi/9jC5n/SAxGRjCLEbfrsYbsfxwBgaYMZgJAABGOYQstFmGBV8JichqC52VlZTdu3EiUr/8zMNqgeJ7JHeodpgCYvxgZmGJhjHSY8wphjFqEXsZuosuk/xgBgZqIAAKIgIcfPnz48q/xf5GkP5yWUrbbQkNDGxoaSEjVOKKIMRhbMv6PEvX/mxkYG0EMxg6G/6WoSQJXnONJFDAuQAAR8HB0dDTQk/oudSaezZw8ojY2NhcuXCgsLCShGsCW8P6vZWAMx+30/9C0/b+BgbGV4X8FUiwx4ki3DDiCD0M9QADh83BjY6Oenp6IiMi/f8AyjuHHjx9ycnLAUnrmzJkHDx6ksND6v4qBMRJ3JIPZjA0M/2tAMUzFQgsggPB5eP369fn5+WJiYmxsbKysrECGgYGBurq6qKjoggULiCm0GG0ZGB1wRsj/ZUjsmQyM2QyM+Qz/+xF5+D849wBjmLGHaoUWQADh9DAwDoHVr6qqKpD9/ft3qGomJkdHRxYWFmALhEBCBibIIwz/DzH8PwBzxg6oY/5tQDjl32Jw+DCCyWkM/ychnAvMwwh2CdUKLYAAwulhSd4P+aEfL507BGRDkjSI8evDoyvLgGlbVZaD5EKLEZmGugDE/Q8lEUkUrb5CjiWKCy2AAMLu4V+PJnLeTiiM+HBhiyOwpcXHxwcRP31ww+e7iyU5n3UkvWD4+5HYshqzCfEfXvliK43+o5de2JslxKRnDM8DBBD2hsfPOwWyKuBS2p3BIq7Q19dXWVkZ2Bb98vRsRjhDWjADNz8Dw90ABrX96DqN/w/yvgNAADGOtN4SQIABAPJXEqpppWQPAAAAAElFTkSuQmCC" alt="linux badge">
-    <img src="https://cyber.dabamos.de/88x31/debian-powered.gif" alt="debian powered badge">
-    <img src="https://capstasher.neocities.org/88x31Buttons/archlinux.gif" alt="arch linux badge">
-    <img src="https://capstasher.neocities.org/88x31Buttons/fedora.gif" alt="fedora powered badge (written on a fedora laptop!)">
-    <img src="https://cyber.dabamos.de/88x31/gnunano.gif" alt="gnu nano badge">
-    <img src="https://seirdy.one/p/b/ublock-origin.3786077848.webp" alt="ublock origin badge">
-    <img src="https://capstasher.neocities.org/88x31Buttons/coreboot.gif" alt="coreboot badge">
-    <img src="https://capstasher.neocities.org/88x31Buttons/fftake.gif" alt="firefox take back the web badge">
-    <img src="data:image/gif;base64,R0lGODlhUAAPAJEAAImOef///1ka6mZmZiH5BAAAAAAALAAAAABQAA8AAAKNnI+py+0PT5i02ouz3rybIITiSJZhAKTqyrbuC7vBZ9Y1Guf6zs4DaAuKcLyisUcjAU8TG/GZwkGjk2POtxwqg1CUlBoNW3XYUlZwVqq8gG/7/a2OX+XtKH1fw8VSN3GO9GPWdMK1wsanBwYokyRkyBjZUvfoJHm55lhp8ofJiNURKjpKihFxipqqqlAAADs=" alt="left wing badge">
-    <img src="data:image/gif;base64,R0lGODlhUAAPALMAAP////Pz89zc3MfHx7u7u66urqGhoY+Pj3p6em1tbWZmZldXV0VFRSsrKxkZGQcHBywAAAAAUAAPAAAE/1DJSau9OOvNJ/hgKI5kaZ5oKgFO67bPoTzKazsAoe987//A4A+wsjUajsegEUsibzmhdErtERWsViPB6CYGjwcCsWA0FM9WtMpuW4suRPiRIBwNhqQ4jRNKdhM6CoKCfwSDhYiBQFdZWghMCgYIBQcHDw4HC5guaz6KgKGHhKKIPKZDcDAJBw4GmpoDDAgMnJ1BFKKHi7yAqKg+jTYPDAayCWQDAnK2ariko6SgutDAb1gvDwtyBwMJDQMDDlt8fUDT0dGKhuu/QsIws2GsygcCYQ0INp5u/VTwLQpoMVCACQJZSBQweMHPn0NGqhwgUEDLUhgFAs4o+MbwoccgjQ9SiBxJsiSJDihTqlxpIQIAOw==" alt="atheist badge">
-    <img src="https://cyber.dabamos.de/88x31/microsoft_stop.gif" alt="stop microsoft badge">
-    <img src="https://seirdy.one/p/b/right2repair.2750504548.png" alt="right to repair badge">
-    <img src="data:image/gif;base64,R0lGODlhUAAPAJEAAAAAAGZmZv/////OYyH5BAAAAAAALAAAAABQAA8AQAKajI+py+0Pj5iAWlHxzVOM/wEhOIgkaKZjGaosKRjdTNf2dOb6zvdnHLgJh76i8QgcKmvHpvMn20g1VA6O5GKZTq5udwVKLseepxkZSavX7AX5DY/Do3Lb+e4TU6wATt/f18HVh1LIBUaI2LIVRmdVNfUniJVomPOX8jci8gVDh8EHKDqJUgl2+NKZavqhV0eDF6vj+lprqxRQAAA7" alt="code by hand badge">
-    <img src="data:image/gif;base64,R0lGODlhUAAPAOYAAAwHBauuplmF10xppfz89WZmZnJydTJMd19+w9je1jJHbCs+ZVJ1vZ2hnczMzCU8YUpSW2iN2+rt5z5YhXSIs01wtmKK1ru7u094yFBnmjhXliYnJ46OjV1ofDhNdX+AemiL1oaHlOLj312Axu/17kZkmNbW1kNYjSxCbXGZ7BYYGGGEz6eop1V5v1h1rlBWZTA9VmOG00ROZDxSe4mMhtve11t9xExrrTJKcmOMzlhRUEpajMXFxTBCaVuDz1Bvq/T18EhmomxgWWuR42yR2D5Vhe7w5T9ZkXx7fFt8t+Pk4BQRCTNBXaGgnkxaeP///8vQ1W6U3aysrFl6vFl/yqerp+3u60Vjl97d3mGDx9be3oGCfDdNeSk8YFJztVF9zk9ro0Zimld1tWuMzklhj/f39+fn5gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAQUAP8ALAAAAABQAA8AAAf/gAWCg4SFhoeIiYqLjINPj5CRkpOUlZaXmJmCTyxIVRJQYlFEREkzU6QrA046QiEZABtPFrS1tre4ubq7uU+bUk0iZQkuUVFZChNEIMwIQWBjYykwS7O819jZt74FTxwXJBIkFCMgUydTWczMPydiERFZKtba9fbbmywsDkBGHTgzyJCZ4eHECmYjSvywsGIIGXq7IPWqBfERRVoQdXF74gALDwIBIPTwgKOkgiIrUsYYEGZEjBg2Mk7UOMsixpsWrMnEtdGBGQJKOBRYwKVoySkMV1gYcKTFyxY7t9mUmLMqvUg4o9rq6aBGDRoGuhQ1aiPp0qZPtV7UuLaqW53YgzaawCLFAY0PTA7oPdBjgAUfPlY2FSCAgVqMNre1hfs2ca9NJp6YsNJgiwwUXEqWvCEAcJArVKisqHD4nmmemy7UkPCEx5YXKA5o7sG58JEBKVfcKH26d85fPHg4IMECwgMFyHsc6ewjyBEGAr5g0MDbt+mNmbJr386dUqPv4MOLNxQIADs=" alt="email badge">
-    <img src="https://capstasher.neocities.org/88x31Buttons/internetarchive.gif" alt="internet archive badge">
+    <img src="images/linux-badge.png" alt="linux badge" loading="lazy" decoding="async">
+    <a href="https://cyber.dabamos.de/88x31/debian-powered.gif" target="_blank" rel="noopener noreferrer"><img src="images/debian-powered.gif" alt="debian powered badge" loading="lazy" decoding="async"></a>
+    <a href="https://capstasher.neocities.org/88x31Buttons/archlinux.gif" target="_blank" rel="noopener noreferrer"><img src="images/archlinux.gif" alt="arch linux badge" loading="lazy" decoding="async"></a>
+    <a href="https://capstasher.neocities.org/88x31Buttons/fedora.gif" target="_blank" rel="noopener noreferrer"><img src="images/fedora.gif" alt="fedora powered badge (written on a fedora laptop!)" loading="lazy" decoding="async"></a>
+    <a href="https://cyber.dabamos.de/88x31/gnunano.gif" target="_blank" rel="noopener noreferrer"><img src="images/gnunano.gif" alt="gnu nano badge" loading="lazy" decoding="async"></a>
+    <a href="https://seirdy.one/p/b/ublock-origin.3786077848.webp" target="_blank" rel="noopener noreferrer"><img src="images/ublock-origin.webp" alt="ublock origin badge" loading="lazy" decoding="async"></a>
+    <a href="https://capstasher.neocities.org/88x31Buttons/coreboot.gif" target="_blank" rel="noopener noreferrer"><img src="images/coreboot.gif" alt="coreboot badge" loading="lazy" decoding="async"></a>
+    <a href="https://capstasher.neocities.org/88x31Buttons/fftake.gif" target="_blank" rel="noopener noreferrer"><img src="images/fftake.gif" alt="firefox take back the web badge" loading="lazy" decoding="async"></a>
+    <img src="images/left-wing-badge.gif" alt="left wing badge" loading="lazy" decoding="async">
+    <img src="images/atheist-badge.gif" alt="atheist badge" loading="lazy" decoding="async">
+    <a href="https://cyber.dabamos.de/88x31/microsoft_stop.gif" target="_blank" rel="noopener noreferrer"><img src="images/microsoft-stop.gif" alt="stop microsoft badge" loading="lazy" decoding="async"></a>
+    <a href="https://seirdy.one/p/b/right2repair.2750504548.png" target="_blank" rel="noopener noreferrer"><img src="images/right2repair.png" alt="right to repair badge" loading="lazy" decoding="async"></a>
+    <img src="images/code-by-hand-badge.gif" alt="code by hand badge" loading="lazy" decoding="async">
+    <img src="images/email-badge.gif" alt="email badge" loading="lazy" decoding="async">
+    <a href="https://capstasher.neocities.org/88x31Buttons/internetarchive.gif" target="_blank" rel="noopener noreferrer"><img src="images/internetarchive.gif" alt="internet archive badge" loading="lazy" decoding="async"></a>
 </div>
+<p class="footer-links"><a href="./blog/index.html">blog</a></p>
+</main>
 <div id="server-stats"></div>
 <script>
   function formatUptime(seconds) {
@@ -108,14 +68,17 @@
       .then(r => r.json())
       .then(d => {
         document.getElementById('server-stats').innerHTML =
-          `cpu: ${d.cpu}% utilized · memory: ${d.mem_used}gb / 7.87gb · uptime: ${formatUptime(d.uptime)} · unique visitors (24h): ${d.unique_visitors_by_ip}`;
+          `cpu: ${d.cpu}% · mem: ${d.mem_used}gb/7.87gb · up: ${formatUptime(d.uptime)} · visitors (24h): ${d.unique_visitors_by_ip}`;
       })
-      .catch(() => {});
+      .catch(() => {
+        const el = document.getElementById('server-stats');
+        if (el) el.textContent = 'server stats unavailable';
+      });
   }
 
   updateStats();
   setInterval(updateStats, 60000);
 </script>
-<footer><p>© 2026 btea.dev · Last updated March 29, 2026 · <a href="https://github.com/itsbt125/btea.dev" target="_blank" rel="noopener noreferrer">Source Code</a></p></footer>
+<footer><p>© 2026 btea.dev · Last updated May 16, 2026 · <a href="https://github.com/itsbt125/btea.dev" target="_blank" rel="noopener noreferrer">Source Code</a></p></footer>
 </body>
 </html>
