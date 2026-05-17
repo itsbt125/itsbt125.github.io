@@ -7,6 +7,7 @@ LOKI = "http://localhost:3100"
 PROMETHEUS = "http://localhost:9090/api/v1/query"
 PORT = 9091
 
+
 def query(q):
     with urlopen(f"{PROMETHEUS}?query={quote(q)}") as r:
         return float(json.loads(r.read())["data"]["result"][0]["value"][1])
@@ -53,5 +54,6 @@ class Handler(BaseHTTPRequestHandler):
 
     def log_message(self, *args):
         pass
+
 
 HTTPServer(("", PORT), Handler).serve_forever()
